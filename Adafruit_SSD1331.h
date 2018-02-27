@@ -22,14 +22,8 @@
 
 #define gfx_swap(a, b) { uint16_t t = a; a = b; b = t; }
 
-#ifdef __SAM3X8E__
-typedef volatile RwReg PortReg;
+typedef volatile uint32_t PortReg;
 typedef uint32_t PortMask;
-#define _BV(b) (1<<(b))
-#else
-typedef volatile uint8_t PortReg;
-typedef uint8_t PortMask;
-#endif
 
 // Select one of these defines to set the pixel color order
 #define SSD1331_COLORORDER_RGB
